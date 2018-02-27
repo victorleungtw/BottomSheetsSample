@@ -46,6 +46,14 @@
                 android:layout_margin="8dp"
                 android:text="@string/button3"/>
 
+            <Button
+                android:id="@+id/button_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_margin="8dp"
+                android:text="Open Activity"/>
+
         </LinearLayout>
 
     </ScrollView>
@@ -111,5 +119,7 @@
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
+
+    <include layout="@layout/activity_testing" />
 
 </android.support.design.widget.CoordinatorLayout>

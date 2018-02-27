@@ -11,8 +11,10 @@ class MainActivity : AppCompatActivity() {
     private var mButton1: Button? = null
     private var mButton2: Button? = null
     private var mButton3: Button? = null
+    private var mButton4: Button? = null
     private var mBottomSheetBehavior1: BottomSheetBehavior<*>? = null
     private var mBottomSheetBehavior2: BottomSheetBehavior<*>? = null
+    private var mBottomSheetBehavior4: BottomSheetBehavior<*>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,6 +73,23 @@ class MainActivity : AppCompatActivity() {
             val bottomSheetDialogFragment = BottomSheet3DialogFragment()
             bottomSheetDialogFragment.show(supportFragmentManager, bottomSheetDialogFragment.tag)
         }
+
+
+        mButton4 = findViewById(R.id.button_4) as Button
+        mButton4!!.setOnClickListener {
+
+            val bottomSheet4 = findViewById(R.id.bottom_sheet4)
+            mBottomSheetBehavior4 = BottomSheetBehavior.from(bottomSheet4)
+
+            if (mBottomSheetBehavior4!!.state != BottomSheetBehavior.STATE_EXPANDED) {
+                mBottomSheetBehavior4!!.state = BottomSheetBehavior.STATE_EXPANDED
+                mButton4!!.setText("collapse")
+            } else {
+                mBottomSheetBehavior4!!.state = BottomSheetBehavior.STATE_COLLAPSED
+                mButton4!!.setText("expand")
+            }
+        }
+
     }
 
     companion object {
